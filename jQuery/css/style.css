@@ -228,55 +228,66 @@ body{
 /*タブメニューここまで*/
 
 
-/*スライダー*/
-.slider{
+/* スライダー */
+.slider {
   box-sizing: border-box;
-  width:500px;
+  width: 500px;
   height: 300px;
-  overflow: hidden;/*コンテンツがはみ出ている時に隠す*/
+  overflow: hidden;
   position: relative;
 }
 
-.slider-wrapper{
-  position: absolute;
+.slide-wrapper {
+    position: absolute;
 }
 
-.slide{
-  box-sizing: border-box;
-  background-color: #ddd;
-  width:500px;
-  height: 300px;
-  float: left;
-  text-align: center;
+.slide {
+    box-sizing: border-box;
+    background-color: #ddd;
+    width: 500px;
+    height: 300px;
+    float: left;
+    text-align: center;
 }
 
-.slide{
-  font-size: 60px;
-  line-height: 300px;
-  color: #3498db;
+.slide-text {
+    font-size: 60px;
+    line-height: 300px;
+    color: #3498db;
 }
 
-.prev-slider{
-  position: absolute;
-  top:50%;
-  left: 2%;
-  cursor: pointer;
-  font-size: 50px;
-  margin-top: -25px;
+.prev-slider {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    cursor: pointer;
+    font-size: 50px;
+    margin-top: -25px;
 }
 
-.next-slider{
-  position: absolute;
-  top:50%;
-  right: 2%;
-  cursor: pointer;
-  font-size: 50px;
-  margin-top: -25px;
+.next-slider {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    cursor: pointer;
+    font-size: 50px;
+    margin-top: -25px;
 }
 
 /*スライダーここまで*/
 
 
+/*明日聞くところ
+
+タブメニュー
+.tab-content > .active{
+  display: block;
+}
+なんで元々ブロック要素なのにまたブッロクするねん
+
+
+スライド
+どのCSSで１〜５のスライドを隠しているのかがわからない*/
 
 
 

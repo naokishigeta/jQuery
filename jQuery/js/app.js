@@ -125,18 +125,55 @@ $('.tab-nav a').on('click',function(){
   $('.tab-content > div').filter(this.hash).addClass('active');//filterは（this.#）に当たるののを（content>div）から引っ張ってくる
  return false;
   
-
   
 });
 
 
-// スライダー
-let slideWidth =$('.slide').outerWidth();
+// スライダー　　コンソールしまくって復習する
+
+//クラスslideの要素の幅だよ（marginは含まない）
+let slideWidth =$('.slide').outerWidth();//引数にmargin入れると含める
+// slideクラスがついているdivの数（５）
 let slideNum =$('.slide').length;
+
 let slideWrapperWidth=slideWidth*slideNum;
 let currentSlide=0;
 
+$('slide-wrapper').css('width', slideWrapperWidth);
 
+//次へ
+$('.next-slider').on('click',function(){
+// もし最後のスライドだった場合、処理停止
+// 復習問題
+  if(currentSlide>=slideNum-1){
+    return false;
+  }
+
+
+  currentSlide++;
+  slide();
+  
+});
+// 前へ
+$('.prev-slider').on('clisk',function(){
+  // もし最初のスライドだったら処理停止
+  // 復習問題
+if(currentSlide<=0){
+    return false;
+  }
+
+  currentSlide--;
+  slide();
+});
+
+
+function slide(){
+  //押せば強制スタートのためにストップ(遅めのスピードを与えた時連打ができるようになる)
+  $('.slide-wrapper').stop().animate({
+    left:currentSlide* -slideWidth
+  },1000);
+  console.log('左に'+currentSlide* -slideWidth);
+}
 
 
 
